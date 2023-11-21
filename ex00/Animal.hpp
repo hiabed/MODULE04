@@ -9,9 +9,12 @@ protected:
     std::string type;
 public:
     Animal();
+    Animal(std::string newType);
     Animal(const Animal &other);
     Animal &operator=(const Animal &other);
     ~Animal();
+    void getType();
+    void makeSound();
 };
 
 #endif
