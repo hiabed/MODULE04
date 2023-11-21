@@ -18,6 +18,11 @@ Dog &Dog::operator=(const Dog &other)
     return *this;
 }
 
+void Dog::getType()
+{
+    return type;
+}
+
 void Dog::makeSound()
 {
     std::cout << "Woof!!\n";
