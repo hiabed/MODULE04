@@ -13,8 +13,8 @@ public:
     Animal(const Animal &other);
     Animal &operator=(const Animal &other);
     ~Animal();
-    void getType();
-    void makeSound();
+    virtual std::string getType() const;
+    virtual void makeSound() const;
 };
 
 #endif

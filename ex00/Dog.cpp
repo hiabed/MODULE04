@@ -18,12 +18,12 @@ Dog &Dog::operator=(const Dog &other)
     return *this;
 }
 
-void Dog::getType()
+std::string Dog::getType() const
 {
     return type;
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
     std::cout << "Woof!!\n";
 }
