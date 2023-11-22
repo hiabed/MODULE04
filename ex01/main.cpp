@@ -3,19 +3,22 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-
 int main()
 {
-    const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
 
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-
+    Dog *dog1 = new Dog;
+    Dog *dog2 = new Dog;
+    Cat *cat1 = new Cat;
+    Cat *cat2 = new Cat;
+    Animal *arr[4] = {new Dog, dog2, cat1, cat2};
+    for(int i = 0; i < 4; i++)
+    {
+        delete arr[i];
+    }
+    delete j; //should not create a leak
+    delete i;
+    system("leaks Brain");
     return 0;
 }

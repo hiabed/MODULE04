@@ -3,19 +3,24 @@
 Cat::Cat()
 {
     type = "Cat\n";
+    brainPtr = new Brain();
     std::cout << "Cat constructor called!\n";
 }
 
 Cat::Cat(const Cat &other)
 {
     *this = other;
+    brainPtr = new Brain();
     std::cout << "Cat copy constructor called!\n";
 }
 
 Cat &Cat::operator=(const Cat &other)
 {
     if(this != &other)
+    {
         this->type = other.type;
+        *this->brainPtr = *other.brainPtr;
+    }
     std::cout << "Cat copy assignement operator called!\n";
     return *this;
 }
@@ -32,5 +37,6 @@ void Cat::makeSound() const
 
 Cat::~Cat()
 {
+    delete brainPtr;
     std::cout << "Cat Destructor called!\n";
 }

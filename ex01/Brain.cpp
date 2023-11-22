@@ -14,7 +14,10 @@ Brain::Brain(const Brain &other)
 Brain &Brain::operator=(const Brain &other)
 {
     if(this != &other)
-        this->type = other.type;
+    {
+        for(int i = 0; i < 100; i++)
+            this->ideas[i] = other.ideas[i];
+    }
     std::cout << "Brain copy assignement operator called!\n";
     return *this;
 }

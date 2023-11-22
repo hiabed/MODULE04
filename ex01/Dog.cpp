@@ -3,11 +3,13 @@
 Dog::Dog()
 {
     type = "Dog\n";
+    brainPtr = new Brain();
     std::cout << "Dog constructor called!\n";
 }
 
 Dog::Dog(const Dog &other)
 {
+    brainPtr = new Brain();
     *this = other;
     std::cout << "Dog copy constructor called!\n";
 }
@@ -15,7 +17,10 @@ Dog::Dog(const Dog &other)
 Dog &Dog::operator=(const Dog &other)
 {
     if(this != &other)
+    {
         this->type = other.type;
+        *this->brainPtr = *other.brainPtr;
+    }
     std::cout << "Dog copy assignement operator called!\n";
     return *this;
 }
@@ -32,5 +37,6 @@ void Dog::makeSound() const
 
 Dog::~Dog()
 {
+    delete brainPtr;
     std::cout << "Dog Destructor called!\n";
 }

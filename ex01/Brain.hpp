@@ -3,8 +3,10 @@
 
 #include "Animal.hpp"
 
-class Brain : public Animal
+class Brain
 {
+private:
+    std::string ideas[100];
 public:
     Brain();
     Brain(const Brain &other);
