@@ -12,11 +12,9 @@ int main()
     Dog *dog2 = new Dog;
     Cat *cat1 = new Cat;
     Cat *cat2 = new Cat;
-    Animal *arr[4] = {new Dog, dog2, cat1, cat2};
+    Animal *arr[4] = {dog1, dog2, cat1, cat2};
     for(int i = 0; i < 4; i++)
-    {
         delete arr[i];
-    }
     delete j; //should not create a leak
     delete i;
     system("leaks Brain");
