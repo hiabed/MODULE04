@@ -17,6 +17,5 @@ int main()
         delete arr[i];
     delete j; //should not create a leak
     delete i;
-    system("leaks Brain");
     return 0;
 }
