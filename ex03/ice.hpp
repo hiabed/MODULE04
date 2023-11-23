@@ -3,16 +3,15 @@
 
 #include "AMateria.hpp"
 
-class ice : public AMateria
+class Ice : public AMateria
 {
 public:
-    ice();
-    ice(std::string const & type);
-    ice(const ice &other);
-    ice &operator=(const ice &other);
-    ~ice();
+    Ice();
+    Ice(const Ice &other);
+    Ice &operator=(const Ice &other);
+    ~Ice();
     std::string const & getType() const; //Returns the materia type.
-    ice* clone() const;
+    Ice* clone() const;
     void use(ICharacter& target);
 };
 

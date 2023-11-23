@@ -3,16 +3,15 @@
 
 #include "AMateria.hpp"
 
-class cure : public AMateria
+class Cure : public AMateria
 {
 public:
-    cure();
-    cure(std::string const & type);
-    cure(const cure &other);
-    cure &operator=(const cure &other);
-    ~cure();
+    Cure();
+    Cure(const Cure &other);
+    Cure &operator=(const Cure &other);
+    ~Cure();
     std::string const & getType() const; //Returns the materia type.
-    cure* clone() const;
+    Cure* clone() const;
     void use(ICharacter& target);
 };
 

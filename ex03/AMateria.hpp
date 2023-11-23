@@ -2,6 +2,9 @@
 #define AMATERIA_HPP
 
 #include <iostream>
+#include "ICharacter.hpp"
+#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
 class AMateria
 {

@@ -1,14 +1,8 @@
 #include "ice.hpp"
 
-ice::ice()
+ice::ice() : AMateria("ice");
 {
-    _type = "Default type";
     std::cout << "ice default constructor called!\n";
-}
-
-ice::ice(std::string const &type)
-{
-    _type = type;
 }
 
 ice::ice(const ice &other)

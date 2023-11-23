@@ -1,22 +1,21 @@
 #include "cure.hpp"
 
-cure::cure()
+Cure::Cure() : AMateria("cure")
 {
-    _type = "Default type";
-    std::cout << "cure default constructor called!\n";
+    // std::cout << "Cure default constructor called!\n";
 }
 
-cure::cure(std::string const &type)
-{
-    _type = type;
-}
+// Cure::Cure(std::string const &type) : AMateria("Cure")
+// {
+//     _type = type;
+// }
 
-cure::cure(const cure &other)
+Cure::Cure(const Cure &other)
 {
     *this = other;
 }
 
-cure &cure::operator=(const cure &other)
+Cure &Cure::operator=(const Cure &other)
 {
     if(this != &other)
     {
@@ -25,23 +24,23 @@ cure &cure::operator=(const cure &other)
     return *this;
 }
 
-std::string const &cure::getType() const
+std::string const &Cure::getType() const
 {
     return _type;
 }
 
-cure *cure::clone() const
+Cure *Cure::clone() const
 {
-    cure *new_instance = new cure();
+    Cure *new_instance = new Cure();
     return new_instance;
 }
 
-/* void cure::use(ICharacter& target)
+/* void Cure::use(ICharacter& target)
 {
     // implementation needed;
 } */
 
-cure::~cure()
+Cure::~Cure()
 {
-    std::cout << "cure destructor called!\n";
+    std::cout << "Cure destructor called!\n";
 }

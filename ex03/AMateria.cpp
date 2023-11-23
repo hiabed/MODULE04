@@ -2,7 +2,6 @@
 
 AMateria::AMateria()
 {
-    _type = "Default type";
     std::cout << "AMateria default constructor called!\n";
 }
 
@@ -28,6 +27,11 @@ AMateria &AMateria::operator=(const AMateria &other)
 std::string const &AMateria::getType() const
 {
     return _type;
+}
+
+void AMateria::use(ICharacter& target)
+{
+
 }
 
 AMateria::~AMateria()
