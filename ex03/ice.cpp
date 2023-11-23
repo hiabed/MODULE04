@@ -1,16 +1,16 @@
-#include "ice.hpp"
+#include "AMateria.hpp"
 
-ice::ice() : AMateria("ice");
+Ice::Ice() : AMateria("ice")
 {
     std::cout << "ice default constructor called!\n";
 }
 
-ice::ice(const ice &other)
+Ice::Ice(const Ice &other)
 {
     *this = other;
 }
 
-ice &ice::operator=(const ice &other)
+Ice &Ice::operator=(const Ice &other)
 {
     if(this != &other)
     {
@@ -19,23 +19,23 @@ ice &ice::operator=(const ice &other)
     return *this;
 }
 
-std::string const &ice::getType() const
+std::string const &Ice::getType() const
 {
     return _type;
 }
 
-ice *ice::clone() const
+Ice *Ice::clone() const
 {
-    ice *new_instance = new ice();
+    Ice *new_instance = new Ice();
     return new_instance;
 }
 
-/* void ice::use(ICharacter& target)
+void Ice::use(ICharacter& target)
 {
-    // implementation needed;
-} */
+    std::cout << "Ice: \"*  shoots an Ice bolt at " << _name << " *\"";
+}
 
-ice::~ice()
+Ice::~Ice()
 {
-    std::cout << "ice destructor called!\n";
+    std::cout << "Ice destructor called!\n";
 }

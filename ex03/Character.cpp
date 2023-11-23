@@ -1,4 +1,4 @@
-#include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character()
 {
@@ -24,6 +24,11 @@ Character &Character::operator=(const Character &other)
     return *this;
 }
 
+std::string const &Character::getName() const
+{
+    return _name;
+}
+
 void Character::equip(AMateria *m)
 {
     // implementation needed;
@@ -37,6 +42,7 @@ void Character::unequip(int idx)
 void Character::use(int idx, ICharacter &target)
 {
     // implementation needed;
+
 }
 
 Character::~Character()
