@@ -4,11 +4,19 @@
 Character::Character()
 {
     _name = "Abed";
+    for (int i = 0; i < 4; i++)
+        slots[i] = NULL;
+    for (int i = 0; i < 4; i++)
+        unequiped_slots[i] = NULL;
 }
 
 Character::Character(std::string name)
 {
     _name = name;
+    for (int i = 0; i < 4; i++)
+        slots[i] = NULL;
+    for (int i = 0; i < 4; i++)
+        unequiped_slots[i] = NULL;
 }
 
 Character::Character(const Character &other)
@@ -32,14 +40,34 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-    slots[0] = m->clone();
-    // implementation needed;
+    for (int i = 0; i < 4; i++)
+    {
+        if(unequiped_slots[i] != NULL)
+        {
+            free(unequiped_slots[i]);
+        }
+    }
+    for (int i = 0; i < 4; i++)
+    {
+        if(slots[i] == NULL)
+        {
+            slots[i] = m->clone();
+            break;
+        }
+    }
 }
 
 void Character::unequip(int idx)
 {
-    (void)idx;
-    // implementation needed;
+    for (int i = 0; i < 4; i++) //save the adress to free later on equipe method;
+    {
+        if(unequiped_slots[i] == NULL)
+        {
+            unequiped_slots[i] = slots[idx];
+            break;
+        }
+    }
+    slots[idx] = NULL;
 }
 
 void Character::use(int idx, ICharacter &target)
