@@ -2,12 +2,8 @@
 #define AMATERIA_HPP
 
 #include <iostream>
-#include "IMateriaSource.hpp"
-#include "MateriaSource.hpp"
-#include "Cure.hpp"
-#include "Ice.hpp"
-#include "ICharacter.hpp"
-#include "Character.hpp"
+
+class ICharacter;
 
 class AMateria
 {

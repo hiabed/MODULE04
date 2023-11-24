@@ -1,8 +1,8 @@
-#include "AMateria.hpp"
+#include "Cure.hpp"
 
 Cure::Cure() : AMateria("cure")
 {
-    // std::cout << "Cure default constructor called!\n";
+    std::cout << "Cure default constructor called!\n";
 }
 
 // Cure::Cure(std::string const &type) : AMateria("Cure")
@@ -37,6 +37,7 @@ Cure *Cure::clone() const
 
 void Cure::use(ICharacter& target)
 {
+    (void)target;
     std::cout << "Cure: \"* heals " << _name << "’s wounds *\"";
 }
 

@@ -1,4 +1,4 @@
-#include "AMateria.hpp"
+#include "Character.hpp"
 
 Character::Character()
 {
@@ -31,18 +31,21 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
+    (void)m;
     // implementation needed;
 }
 
 void Character::unequip(int idx)
 {
+    (void)idx;
     // implementation needed;
 }
 
 void Character::use(int idx, ICharacter &target)
 {
+    (void)idx;
+    (void)target;
     // implementation needed;
-
 }
 
 Character::~Character()

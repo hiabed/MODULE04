@@ -1,4 +1,4 @@
-#include "AMateria.hpp"
+#include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource()
 {
@@ -13,10 +13,10 @@ MateriaSource::MateriaSource(const MateriaSource &other)
 
 MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
-    // if(this != &other)
-    // {
-    // }
-    std::cout << "MateriaSource copy assignement called\n";
+    if(this != &other)
+    {
+        std::cout << "MateriaSource copy assignement called\n";
+    }
     return *this;
 }
 
@@ -32,5 +32,6 @@ void MateriaSource::learnMateria(AMateria *)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-
+    (void)type;
+    return nullptr;
 }
