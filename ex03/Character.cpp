@@ -1,8 +1,9 @@
 #include "Character.hpp"
+#include "AMateria.hpp"
 
 Character::Character()
 {
-    *slots = NULL;
+    _name = "Abed";
 }
 
 Character::Character(std::string name)
@@ -31,7 +32,7 @@ std::string const &Character::getName() const
 
 void Character::equip(AMateria *m)
 {
-    (void)m;
+    slots[0] = m->clone();
     // implementation needed;
 }
 
