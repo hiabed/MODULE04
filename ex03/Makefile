@@ -1,4 +1,4 @@
-NAME = Brain
+NAME = FinalFantasy
 
 CXX = c++
 
