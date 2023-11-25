@@ -46,8 +46,8 @@ void Character::equip(AMateria *m)
     {
         if(slots[i] == NULL)
         {
-            slots[i] = m->clone();
-            break;
+            slots[i] = m;
+            return ;
         }
     }
 }
@@ -85,16 +85,11 @@ void Character::use(int idx, ICharacter &target)
         std::cout << "Please enter an index between 0 and 3";
         return ;
     }
-    if(slots[idx])
+    if (slots[idx])
         slots[idx]->use(target);
 }
 
 Character::~Character()
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if(slots[i] != NULL)
-            delete slots[i];
-    }
     std::cout << "Character Destructor called\n";
 }

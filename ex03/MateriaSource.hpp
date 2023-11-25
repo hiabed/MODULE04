@@ -15,7 +15,7 @@ public:
     MateriaSource(const MateriaSource &other);
     MateriaSource &operator=(const MateriaSource &other);
     ~MateriaSource();
-    void learnMateria(AMateria *m);
+    void learnMateria(AMateria *);
     AMateria* createMateria(std::string const & type);
 };
 

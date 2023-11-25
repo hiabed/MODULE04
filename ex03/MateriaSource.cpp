@@ -5,6 +5,8 @@ MateriaSource::MateriaSource()
 {
     for (int i = 0; i < 4; i++)
         materias[i] = NULL;
+    for (int i = 0; i < 4; i++)
+        tmp[i] = NULL;
     std::cout << "MateriaSource default constructor called\n";
 }
 
@@ -18,6 +20,10 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 {
     if(this != &other)
     {
+        for(int i = 0; i < 4; i++)
+            this->materias[i] = other.materias[i];
+        for(int i = 0; i < 4; i++)
+            this->tmp[i] = other.tmp[i];
         std::cout << "MateriaSource copy assignement called\n";
     }
     return *this;
@@ -25,6 +31,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
+
     for (int i = 0; i < 4; i++)
     {
         if(materias[i] == NULL)
@@ -50,11 +57,15 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 MateriaSource::~MateriaSource()
 {
-    for (int i = 0; i < 4; i++)
-    {
-        if(materias[i])
-            delete materias[i];
-    }
+    // for (int i = 0; i < 4; i++)
+    // {
+    //     int j = i;
+    //     if (materias[i] && materias[i] != materias[j])
+    //     {
+    //         delete materias[i];
+    //         materias[i] = NULL;
+    //     }
+    // }
     for (int i = 0; i < 4; i++)
     {
         if(tmp[i])
