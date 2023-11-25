@@ -27,7 +27,6 @@ void ft()
 int main()
 {
     ft();
-    // while (1);
     system("leaks FinalFantasy");
     return 0;
 }
