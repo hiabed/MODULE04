@@ -72,9 +72,12 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter &target)
 {
-    (void)idx;
-    (void)target;
-    // implementation needed;
+    if (idx < 0 || idx > 3)
+    {
+        std::cout << "Please enter an index between 0 and 3";
+        return ;
+    }
+    slots[idx]->use(target);
 }
 
 Character::~Character()
