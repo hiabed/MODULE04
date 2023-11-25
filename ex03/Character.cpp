@@ -6,8 +6,8 @@ Character::Character()
     _name = "Abed";
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
-    for (int i = 0; i < 4; i++)
-        unequiped_slots[i] = NULL;
+    // for (int i = 0; i < 4; i++)
+    //     unequiped_slots[i] = NULL;
 }
 
 Character::Character(std::string name)
@@ -15,8 +15,8 @@ Character::Character(std::string name)
     _name = name;
     for (int i = 0; i < 4; i++)
         slots[i] = NULL;
-    for (int i = 0; i < 4; i++)
-        unequiped_slots[i] = NULL;
+    // for (int i = 0; i < 4; i++)
+    //     unequiped_slots[i] = NULL;
 }
 
 Character::Character(const Character &other)
@@ -59,14 +59,14 @@ void Character::equip(AMateria *m)
 
 void Character::unequip(int idx)
 {
-    for (int i = 0; i < 4; i++) //save the adress to free later on equipe method;
-    {
-        if(unequiped_slots[i] == NULL)
-        {
-            unequiped_slots[i] = slots[idx];
-            break;
-        }
-    }
+    // for (int i = 0; i < 4; i++) //save the adress to free later on equipe method;
+    // {
+    //     if(unequiped_slots[i] == NULL)
+    //     {
+    //         unequiped_slots[i] = slots[idx];
+    //         break;
+    //     }
+    // }
     slots[idx] = NULL;
 }
 
@@ -82,5 +82,10 @@ void Character::use(int idx, ICharacter &target)
 
 Character::~Character()
 {
+    for (int i = 0; i < 4; i++)
+    {
+        if(slots[i] != NULL)
+            delete slots[i];
+    }
     std::cout << "Character Destructor called\n";
 }
