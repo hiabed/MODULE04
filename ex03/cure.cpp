@@ -21,6 +21,7 @@ Cure &Cure::operator=(const Cure &other)
     if(this != &other)
     {
         this->_type = other._type;
+        this->_name = other._name;
     }
     return *this;
 }

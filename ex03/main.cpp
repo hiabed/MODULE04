@@ -6,9 +6,9 @@
 #include "ICharacter.hpp"
 #include "Character.hpp"
 
-int main()
+void ft()
 {
-    IMateriaSource* src = new MateriaSource();
+     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
@@ -23,6 +23,11 @@ int main()
     delete bob;
     delete me;
     delete src;
-    // system("leaks FinalFantasy");
+}
+int main()
+{
+    ft();
+    // while (1);
+    system("leaks FinalFantasy");
     return 0;
 }

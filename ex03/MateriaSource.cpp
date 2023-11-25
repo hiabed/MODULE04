@@ -25,6 +25,11 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 
 MateriaSource::~MateriaSource()
 {
+    for (int i = 0; i < 4; i++)
+    {
+        if(materias[i])
+            delete materias[i];
+    }
     std::cout << "MateriaSource Destructor called\n";
 }
 

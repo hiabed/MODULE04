@@ -16,6 +16,7 @@ Ice &Ice::operator=(const Ice &other)
     if(this != &other)
     {
         this->_type = other._type;
+        this->_name = other._name;
     }
     return *this;
 }
