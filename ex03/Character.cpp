@@ -9,7 +9,7 @@ Character::Character()
         slots[i] = NULL;
     for (int i = 0; i < 4; i++)
         unequiped_slots[i] = NULL;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 255; i++)
         tmp[i] = NULL;
 }
 
@@ -20,7 +20,7 @@ Character::Character(std::string name)
         slots[i] = NULL;
     for (int i = 0; i < 4; i++)
         unequiped_slots[i] = NULL;
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 255; i++)
         tmp[i] = NULL;
 }
 
@@ -36,9 +36,9 @@ Character &Character::operator=(const Character &other)
         this->_name = other._name;
         for (int i = 0; i < 4; i++)
             this->slots[i] = other.slots[i];
-        for (int i = 0; i < 4; i++)
-            this->tmp[i] = other.tmp[i];
     }
+        for (int i = 0; i < 255; i++)
+            this->tmp[i] = other.tmp[i];
     return *this;
 }
 
@@ -51,11 +51,16 @@ void Character::equip(AMateria *m)
 {
     for (int i = 0; i < 4; i++)
     {
+        delete unequiped_slots[i];
+        unequiped_slots[i] = NULL;
+    }
+    for (int i = 0; i < 255; i++)
+    {
+        if (slots[i] == m)
+            break;
         if(slots[i] == NULL)
         {
             slots[i] = m;
-            if(tmp[i] == NULL)
-                tmp[i] = m;
             return ;
         }
     }
@@ -78,11 +83,6 @@ void Character::unequip(int idx)
                 break;
             }
         }
-        for (int i = 0; i < 4; i++)
-        {
-            if(unequiped_slots[i] != NULL)
-                delete unequiped_slots[i];
-        }
         slots[idx] = NULL;
     }
 }
@@ -103,7 +103,7 @@ Character::~Character()
     std::cout << "Character Destructor called\n";
     for (int i = 0; i < 4; i++)
     {
-        if(tmp[i])
-            delete tmp[i];
+        delete slots[i];
+        delete unequiped_slots[i];
     }
 }

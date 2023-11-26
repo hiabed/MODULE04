@@ -27,12 +27,11 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 
 void MateriaSource::learnMateria(AMateria *m)
 {
-
     for (int i = 0; i < 4; i++)
     {
-        // if (materias[i] == m)
-        //     break;
-        if(materias[i] == NULL)
+        if (materias[i] == m)
+            break;
+        else if(materias[i] == NULL)
         {
             materias[i] = m;
             break;
