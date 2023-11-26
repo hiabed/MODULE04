@@ -9,14 +9,7 @@
 void ft()
 {
     IMateriaSource* src = new MateriaSource();
-    AMateria *a = new Ice();
-    src->learnMateria(a);
-    src->learnMateria(a);
-    src->learnMateria(a);
-    src->learnMateria(a);
-    src->learnMateria(a);
-    src->learnMateria(a);
-    // src->learnMateria(a);
+    src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
     AMateria* tmp;
@@ -25,11 +18,7 @@ void ft()
     tmp = src->createMateria("cure");
     me->equip(tmp);
     // me->unequip(0);
-    // me->unequip(0);
-    // me->unequip(0);
-    // me->unequip(0);
-    // me->unequip(0);
-    // me->unequip(0);
+    // me->equip(tmp);
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
