@@ -3,7 +3,7 @@
 
 Ice::Ice() : AMateria("ice")
 {
-    std::cout << "ice default constructor called!\n";
+    
 }
 
 Ice::Ice(const Ice &other)
@@ -39,5 +39,5 @@ void Ice::use(ICharacter& target)
 
 Ice::~Ice()
 {
-    std::cout << "Ice destructor called!\n";
+
 }

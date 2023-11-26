@@ -2,7 +2,6 @@
 
 AMateria::AMateria()
 {
-    std::cout << "AMateria default constructor called!\n";
 }
 
 AMateria::AMateria(std::string const &type)
@@ -36,5 +35,5 @@ void AMateria::use(ICharacter& target)
 
 AMateria::~AMateria()
 {
-    std::cout << "AMateria destructor called!\n";
+    // std::cout << "AMateria destructor called!\n";
 }

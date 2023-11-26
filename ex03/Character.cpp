@@ -1,6 +1,5 @@
 #include "Character.hpp"
 #include "AMateria.hpp"
-#include "linkedList.hpp"
 
 Character::Character()
 {
@@ -9,8 +8,6 @@ Character::Character()
         slots[i] = NULL;
     for (int i = 0; i < 4; i++)
         unequiped_slots[i] = NULL;
-    for (int i = 0; i < 255; i++)
-        tmp[i] = NULL;
 }
 
 Character::Character(std::string name)
@@ -20,12 +17,14 @@ Character::Character(std::string name)
         slots[i] = NULL;
     for (int i = 0; i < 4; i++)
         unequiped_slots[i] = NULL;
-    for (int i = 0; i < 255; i++)
-        tmp[i] = NULL;
 }
 
 Character::Character(const Character &other)
 {
+    for (int i = 0; i < 4; i++)
+        slots[i] = NULL;
+    for (int i = 0; i < 4; i++)
+        unequiped_slots[i] = NULL;
     *this = other;
 }
 
@@ -35,10 +34,11 @@ Character &Character::operator=(const Character &other)
     {
         this->_name = other._name;
         for (int i = 0; i < 4; i++)
-            this->slots[i] = other.slots[i];
+        {
+            delete slots[i];
+            this->slots[i] = other.slots[i]->clone();
+        }
     }
-        for (int i = 0; i < 255; i++)
-            this->tmp[i] = other.tmp[i];
     return *this;
 }
 
@@ -54,16 +54,17 @@ void Character::equip(AMateria *m)
         delete unequiped_slots[i];
         unequiped_slots[i] = NULL;
     }
-    for (int i = 0; i < 255; i++)
+    for (int i = 0; i < 4; i++)
     {
         if (slots[i] == m)
-            break;
+            return ;
         if(slots[i] == NULL)
         {
             slots[i] = m;
             return ;
         }
     }
+    delete m;
 }
 
 void Character::unequip(int idx)
@@ -100,7 +101,6 @@ void Character::use(int idx, ICharacter &target)
 
 Character::~Character()
 {
-    std::cout << "Character Destructor called\n";
     for (int i = 0; i < 4; i++)
     {
         delete slots[i];

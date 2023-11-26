@@ -8,11 +8,11 @@ class AMateria;
 class Character : public ICharacter
 {
 private:
-    AMateria *slots[4];
     AMateria *unequiped_slots[4];
-    AMateria *tmp[255];
+
     std::string _name;
 public:
+    AMateria *slots[4];
     Character();
     Character(std::string name);
     Character(const Character &other);

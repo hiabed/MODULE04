@@ -3,7 +3,7 @@
 
 Cure::Cure() : AMateria("cure")
 {
-    std::cout << "Cure default constructor called!\n";
+    // std::cout << "Cure default constructor called!\n";
 }
 
 // Cure::Cure(std::string const &type) : AMateria("Cure")
@@ -44,5 +44,5 @@ void Cure::use(ICharacter& target)
 
 Cure::~Cure()
 {
-    std::cout << "Cure destructor called!\n";
+    
 }
