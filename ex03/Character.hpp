@@ -9,10 +9,9 @@ class Character : public ICharacter
 {
 private:
     AMateria *unequiped_slots[4];
-
+    AMateria *slots[4];
     std::string _name;
 public:
-    AMateria *slots[4];
     Character();
     Character(std::string name);
     Character(const Character &other);

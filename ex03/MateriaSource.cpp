@@ -31,18 +31,18 @@ void MateriaSource::learnMateria(AMateria *m)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (materias[i] == m)
-        {
-            std::cout << "Materia already learned!" << std::endl;
-            return ;
-        }
         if(materias[i] == NULL)
         {
             materias[i] = m;
             return ;
         }
+        if (i == 3)
+        {
+            std::cout << "you can't learn more materias!\n";
+            return ;
+        }
     }
-    delete m;
+
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

@@ -1,4 +1,5 @@
 #include "AMateria.hpp"
+#include "AMateria.hpp"
 
 AMateria::AMateria()
 {
