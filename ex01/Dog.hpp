@@ -15,6 +15,7 @@ public:
     ~Dog();
     std::string getType() const;
     void makeSound() const;
+    Brain *get_brain();
 };
 
 #endif

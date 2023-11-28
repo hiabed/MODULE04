@@ -1,5 +1,10 @@
 #include "Dog.hpp"
 
+Brain *Dog::get_brain()
+{
+    return brainPtr;
+}
+
 Dog::Dog()
 {
     type = "Dog\n";
@@ -18,6 +23,8 @@ Dog &Dog::operator=(const Dog &other)
 {
     if(this != &other)
     {
+        delete brainPtr;
+        brainPtr = new Brain();
         this->type = other.type;
         *this->brainPtr = *other.brainPtr;
     }
