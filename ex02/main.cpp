@@ -11,7 +11,6 @@ int main()
     Dog *dog1 = new Dog;
     Dog *dog2 = new Dog;
     
-
     std::cout << "Animal type: " << dog1->getType() << std::endl;
     std::cout << "Animal type: " << dog2->getType() << std::endl;
     dog1->makeSound();

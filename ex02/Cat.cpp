@@ -9,7 +9,8 @@ Cat::Cat()
 
 Cat::Cat(const Cat &other)
 {
-    brainPtr = new Brain();
+    // brainPtr = new Brain();
+    brainPtr = NULL;
     *this = other;
     std::cout << "Cat copy constructor called!\n";
 }

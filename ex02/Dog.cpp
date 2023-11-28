@@ -9,7 +9,7 @@ Dog::Dog()
 
 Dog::Dog(const Dog &other)
 {
-    brainPtr = new Brain();
+    brainPtr = NULL;
     *this = other;
     std::cout << "Dog copy constructor called!\n";
 }
