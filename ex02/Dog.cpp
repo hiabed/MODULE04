@@ -19,7 +19,7 @@ Dog &Dog::operator=(const Dog &other)
     if(this != &other)
     {
         delete brainPtr;
-        brainPtr = new Brain();
+        brainPtr = ne
         this->type = other.type;
         *this->brainPtr = *other.brainPtr;
     }
