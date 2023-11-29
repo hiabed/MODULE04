@@ -5,9 +5,10 @@ Character::Character()
 {
     _name = "Abed";
     for (int i = 0; i < 4; i++)
+    {
         slots[i] = NULL;
-    for (int i = 0; i < 4; i++)
         unequiped_slots[i] = NULL;
+    }
 }
 
 Character::Character(std::string name)
@@ -39,7 +40,9 @@ Character &Character::operator=(const Character &other)
         {
             if (slots[i])
                 delete slots[i];
-            this->slots[i] = other.slots[i]->clone();
+            if (other.slots[i])
+                this->slots[i] = other.slots[i]->clone();
+            this->unequiped_slots[i] = other.unequiped_slots[i];
         }
     }
     return *this;
