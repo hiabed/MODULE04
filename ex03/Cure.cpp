@@ -6,11 +6,6 @@ Cure::Cure() : AMateria("cure")
     // std::cout << "Cure default constructor called!\n";
 }
 
-// Cure::Cure(std::string const &type) : AMateria("Cure")
-// {
-//     _type = type;
-// }
-
 Cure::Cure(const Cure &other)
 {
     *this = other;

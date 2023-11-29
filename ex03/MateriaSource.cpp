@@ -38,10 +38,7 @@ void MateriaSource::learnMateria(AMateria *m)
             return ;
         }
         if (i == 3)
-        {
-            std::cout << "you can't learn more materias!\n";
             return ;
-        }
     }
 }
 
@@ -65,8 +62,6 @@ MateriaSource::~MateriaSource()
                 materias[j] = NULL;
         }
         if (materias[i])
-        {
             delete materias[i];
-        }
     }
 }
