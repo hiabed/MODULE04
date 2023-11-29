@@ -6,7 +6,7 @@
 #include "ICharacter.hpp"
 #include "Character.hpp"
 
-int main1()
+int main()
 {
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
@@ -14,7 +14,6 @@ int main1()
     ICharacter* me = new Character("me");
     AMateria* tmp;
     tmp = src->createMateria("ice");
-    me->equip(tmp);
     me->equip(tmp);
     tmp = src->createMateria("cure");
     me->equip(tmp);
@@ -25,10 +24,4 @@ int main1()
     delete me;
     delete src;
     return 0;
-}
-
-int main()
-{
-    main1();
-    system("leaks FinalFantasy");
 }
